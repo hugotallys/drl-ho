@@ -1,0 +1,11 @@
+name: drl-ho
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - gymnasium[classic-control]
+      - numpy
+      - torch
+      - tensorboard
