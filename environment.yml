@@ -6,6 +6,9 @@ dependencies:
   - pip
   - pip:
       - gymnasium[classic-control]
+      - moviepy  # needed by RecordVideo
       - numpy
       - torch
       - tensorboard
+      # dev tools
+      - ruff

@@ -1,6 +1,6 @@
 # drl-ho
 
-Hands-on experiments following *Deep Reinforcement Learning Hands-On* (M. Lapan), starting with chapter 4 (CartPole).
+Hands-on experiments following *Deep Reinforcement Learning Hands-On* (M. Lapan), starting with chapter 4 (cross-entropy method on CartPole).
 
 ## Setup
 
@@ -12,6 +12,20 @@ conda activate drl-ho
 ## Run
 
 ```bash
-python src/random_cartpole.py --episodes 100 --seed 0   # headless, fast
-python src/random_cartpole.py --episodes 5 --render     # with a window
+python src/cartpole_cross_entropy.py                    # headless, until solved
+python src/cartpole_cross_entropy.py --max-iters 5      # quick smoke run
+python src/cartpole_cross_entropy.py --record-video     # also save mp4 clips to ./video
+python src/cartpole_cross_entropy.py --help             # all hyperparameters
+```
+
+Watch training curves:
+
+```bash
+tensorboard --logdir runs
+```
+
+## Develop
+
+```bash
+ruff check . && ruff format .
 ```
