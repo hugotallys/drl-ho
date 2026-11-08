@@ -1,6 +1,19 @@
 # drl-ho
 
-Hands-on experiments following *Deep Reinforcement Learning Hands-On* (M. Lapan), starting with chapter 4 (cross-entropy method on CartPole).
+Hands-on experiments following *Deep Reinforcement Learning Hands-On* by Maxim Lapan. The repo is a personal workspace for reimplementing the book's examples with modern tooling (Gymnasium, current PyTorch, ruff).
+
+## What's here
+
+| Script | Book chapter | Description |
+| --- | --- | --- |
+| `src/cartpole_cross_entropy.py` | 4 – The Cross-Entropy Method | A small policy network learns CartPole by playing batches of episodes, keeping only the best ones (above a reward percentile), and training to imitate their actions. |
+
+Design notes:
+
+- Each script is self-contained, with hyperparameters in a `Config` dataclass exposed as CLI flags.
+- Headless by default for fast runs; video recording is opt-in.
+- Runs are seeded (PyTorch, NumPy and the environment) for reproducibility.
+- Training metrics (loss, mean reward, reward bound) are logged to TensorBoard.
 
 ## Setup
 
